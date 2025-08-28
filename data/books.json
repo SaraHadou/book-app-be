@@ -1,0 +1,16 @@
+[ {
+  "id" : 1,
+  "title" : "Angular Basics",
+  "author" : "Sara H",
+  "price" : 10.5
+}, {
+  "id" : 3,
+  "title" : "MMM HHHH",
+  "author" : "sss NN",
+  "price" : 39.0
+}, {
+  "id" : 4,
+  "title" : "Nwew",
+  "author" : "Hii",
+  "price" : 44.0
+} ]
