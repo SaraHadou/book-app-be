@@ -1,7 +1,7 @@
 package com.sara.book_crud_app.service;
 
 import com.sara.book_crud_app.exception.BookNotFoundException;
-import com.sara.book_crud_app.model.Book;
+import com.sara.book_crud_app.entity.Book;
 import com.sara.book_crud_app.repository.BookRepository;
 import com.sara.book_crud_app.service.impl.BookServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -36,7 +36,7 @@ public class BookServiceImplTest {
     void saveBook_ShouldReturnSavedBook() {
         when(bookRepository.save(any(Book.class))).thenReturn(book);
 
-        Book saved = bookService.saveBook(book);
+        var saved = bookService.saveBook(book);
 
         assertNotNull(saved);
         assertEquals("The Psychology of Money", saved.getTitle());
@@ -47,7 +47,7 @@ public class BookServiceImplTest {
     void getBookById_WhenExists_ShouldReturnBook() {
         when(bookRepository.findById(1L)).thenReturn(Optional.of(book));
 
-        Book found = bookService.getBookById(1L);
+        var found = bookService.getBookById(1L);
 
         assertEquals("The Psychology of Money", found.getTitle());
     }

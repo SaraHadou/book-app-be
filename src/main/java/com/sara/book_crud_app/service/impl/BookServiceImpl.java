@@ -1,7 +1,7 @@
 package com.sara.book_crud_app.service.impl;
 
 import com.sara.book_crud_app.exception.BookNotFoundException;
-import com.sara.book_crud_app.model.Book;
+import com.sara.book_crud_app.entity.Book;
 import com.sara.book_crud_app.repository.BookRepository;
 import com.sara.book_crud_app.service.BookService;
 

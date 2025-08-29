@@ -1,6 +1,6 @@
 package com.sara.book_crud_app.service;
 
-import com.sara.book_crud_app.model.Book;
+import com.sara.book_crud_app.entity.Book;
 
 import java.util.List;
 

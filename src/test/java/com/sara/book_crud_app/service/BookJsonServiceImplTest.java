@@ -2,7 +2,7 @@ package com.sara.book_crud_app.service;
 
 
 import com.sara.book_crud_app.exception.BookNotFoundException;
-import com.sara.book_crud_app.model.Book;
+import com.sara.book_crud_app.entity.Book;
 import com.sara.book_crud_app.service.impl.BookJsonServiceImpl;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -39,13 +39,13 @@ class BookJsonServiceImplTest {
 
     @Test
     void testSaveBook() {
-        Book book = new Book();
+        var book = new Book();
         book.setId(1L);
         book.setTitle("Test Book");
         book.setAuthor("Author A");
         book.setPrice(10.0);
 
-        Book saved = bookService.saveBook(book);
+        var saved = bookService.saveBook(book);
 
         assertNotNull(saved.getId());
         assertEquals("Test Book", saved.getTitle());
@@ -56,14 +56,14 @@ class BookJsonServiceImplTest {
 
     @Test
     void testGetBookById_Success() {
-        Book book = new Book();
+        var book = new Book();
         book.setId(1L);
         book.setTitle("Book 1");
         book.setAuthor("Author 1");
         book.setPrice(15.0);
 
-        Book saved = bookService.saveBook(book);
-        Book fetched = bookService.getBookById(saved.getId());
+        var saved = bookService.saveBook(book);
+        var fetched = bookService.getBookById(saved.getId());
 
         assertEquals(saved.getId(), fetched.getId());
         assertEquals("Book 1", fetched.getTitle());
@@ -76,13 +76,13 @@ class BookJsonServiceImplTest {
 
     @Test
     void testDeleteBook_Success() {
-        Book book = new Book();
+        var book = new Book();
         book.setId(1L);
         book.setTitle("Book to delete");
         book.setAuthor("Author X");
         book.setPrice(20.0);
 
-        Book saved = bookService.saveBook(book);
+        var saved = bookService.saveBook(book);
         bookService.deleteBook(saved.getId());
 
         assertEquals(0, bookService.getAllBooks().size());
